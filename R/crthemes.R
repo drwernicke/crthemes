@@ -26,7 +26,7 @@ cr_main <- function(toc = TRUE, code_folding = "hide", number_sections=TRUE) {
 
   # get the locations of resource files located within the package
   css <- system.file("rmarkdown", "templates", "cr_main" ,"resources", "style.css", package = "crthemes")
-  template <- system.file("rmarkdown", "templates", "epurate" ,"resources", "template_epurate.html", package = "crthemes")
+  template <- system.file("rmarkdown", "templates", "cr_main" ,"resources", "template_crthemes.html", package = "crthemes")
 
   # call the base html_document function
   rmarkdown::html_document( theme= "lumen",

@@ -1,15 +1,20 @@
 ---
-title: "Template Title"
-author: "Your Name"
-date: "The Date"
+title: "A clean and uncluttered template"
+author: "[Christian Reitan](https://github.com/drwernicke)"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+mail: "reitan.christian@gmail.com"
+linkedin: "cristianreitan"
+twitter: "rajtan"
+github: "drwernicke"
+home: "www.google.com"
 output: 
-  html_document:
-    theme: lumen
-    css: style.css
+  crthemes::cr_main:
     toc: true
-    toc_float: true
-    code_folding: hide
+    code_folding: "hide"
+    number_sections: true
 ---
+
+
 <br><br>
 
 > Let's start with a short introduction. Explain briefly what this document is going to talk about. Maybe add a [useful link](https://github.com/holtzy/epuRate) relative to this project.
@@ -21,7 +26,7 @@ Always start by loading *libraries*. The [tidyverse](https://www.tidyverse.org) 
 ```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(rmarkdown)    # You need this library to run this template.
-library(crthemes)      # Install with devtools: install_github("holtzy/epuRate", force=TRUE)
+library(crthemes)      # Install with devtools: install_github("holtzy/crthemes", force=TRUE)
 ```
 
 Then I explain what is my input data and I load it. Here is how it looks like:
