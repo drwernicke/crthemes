@@ -1,0 +1,16 @@
+---
+title: "Template Title"
+author: "Your Name"
+date: "The Date"
+output: 
+  html_document:
+    theme: lumen
+    css: style.css
+    toc: true
+    toc_float: true
+    code_folding: hide
+---
+
+
+```{r, child=c('template_body.Rmd')}
+```
