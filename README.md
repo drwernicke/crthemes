@@ -30,6 +30,6 @@ library(crthemes)
 
 
 <br><br><br>
-Acknowledgment
+Stuff
 --------
-Thanks to [Florian Rohart](http://florian.rohart.free.fr/Professional_page/Home.html) for his help on the PCTG template. Thanks to [Rstudio](https://www.rstudio.com) and its team for developing so many awesome tools.
+You need a fairly new version of pandoc to use google fonts. 

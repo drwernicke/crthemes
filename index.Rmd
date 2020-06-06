@@ -1,5 +1,6 @@
 ---
 title: "My personal super-simple template"
+subtitle: "My enormously humorous and thought-through subtitle."
 author: "[Christian Reitan](https://github.com/drwernicke)"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 mail: "reitan.christian@gmail.com"
@@ -16,8 +17,7 @@ output:
 
 
 
-
-> This is a very simple showcase of my personal theme. It is heavily influenced and based on [this](https://github.com/holtzy/epuRate) template by [holtzy](https://github.com/holtzy).
+> This is a very simple showcase of my first personal theme. It is heavily influenced and based on [this](https://github.com/holtzy/epuRate) template by [holtzy](https://github.com/holtzy).
 
 
 # A display of document components.
@@ -55,7 +55,7 @@ We can have a look at some data:
 mtcars %>% head(5)
 ```
 
-This file has `r nrow(mtcars)` lines and `r ncol(mtcars)` columns. It is ready to be analysed.
+Inline code: This file has `r nrow(mtcars)` lines and `r ncol(mtcars)` columns. It is ready to be analysed.
 
 
 # Some graphs.
