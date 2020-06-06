@@ -41,7 +41,7 @@ This file has `r nrow(mtcars)` lines and `r ncol(mtcars)` columns. It is ready t
 
 
 
-# A few analysis
+# A few analyses
 ***
 Here are 3 version of a [circular barplot](https://www.r-graph-gallery.com/circular-barplot/) that you can find in the [R graph gallery](https://www.r-graph-gallery.com/circular-barplot/). Note that the figure is centered. You can change the size of the plot with **fig.width** and **fig.height**  
 
