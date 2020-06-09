@@ -32,17 +32,32 @@ We can add things like horizontal lines:
 
 ---
 
+## Title 2
+### Title 3
+#### Title 4
+##### Title 5
+
 **Bold text example**
 
 *Italic text example*
 
-A list:
+#### A list:
 
 * First item
 * Second item
 * Third item
 
-And then we show code by loading some libraries.
+An example of a footnote.^[This is a footnote.]
+
+We can also display code chunks (in this case a dumb one not evaluated by R):
+
+```
+my_function <- function(x, y) {
+  return(x + y)
+}
+```
+
+And then we can try some real running code by loading some libraries.
 ```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(rmarkdown)    # You need this library to run this template.
@@ -57,15 +72,57 @@ mtcars %>% head(5)
 
 Inline code: This file has `r nrow(mtcars)` lines and `r ncol(mtcars)` columns. It is ready to be analysed.
 
+# A table
+```{r, warning=FALSE, results='asis'}
+library(gt)
+mtcars %>% 
+  rownames_to_column() %>%
+  head(5) %>% 
+  select(Model = rowname,
+         `Miles per gallon` = mpg, 
+         `Cylinders` = cyl, 
+         `Horsepower`= hp, 
+         `Number of gears`= gear) %>%
+  gt() %>%
+  tab_header(title = "The mtcars dataset") %>%
+  tab_spanner(label = "Variable", columns = 2:5) %>%
+  tab_source_note(source_note = md("data from `data(mtcars)`")) %>%
+  tab_footnote(footnote = "My footnote", locations = cells_title()) %>%
+  tab_options(table_body.hlines.width = 0,
+              table.font.size = 14,
+              table.width = pct(100),
+              heading.title.font.weight = "light",
+              heading.title.font.size = 18,
+              column_labels.font.weight = "bolder",
+              table_body.hlines.color = "black",
+              data_row.padding = 4)
+```
 
-# Some graphs.
+<br>
+This table uses `gt()` which needs a lot of customizing to look good.
+
+```{r, warning=FALSE}
+mtcars %>% 
+  rownames_to_column() %>%
+  head(5) %>% 
+  select(Model = rowname,
+         `Miles per gallon` = mpg, 
+         `Cylinders` = cyl, 
+         `Horsepower`= hp, 
+         `Number of gears`= gear) %>%
+  knitr::kable()
+```
+
+This table uses `knitr::kable()`, in my opinion it looks better out of the box. It doesn´t support the nice subheadings though. 
+
+# A few figures
 ***
 Note that the figures are centered. You can change the size of the plot with **fig.width** and **fig.height**  
 
 ## horsepower
 
 First, we will look at the relationship between displacement and horsepower:
-```{r, warning=FALSE, fig.align='center' }
+```{r, warning=FALSE, fig.align='center', fig.cap= "My figure caption"}
 mtcars %>%
   ggplot(aes(x = disp, y = hp, color = as.factor(gear))) +
   geom_point() +
@@ -74,7 +131,7 @@ mtcars %>%
 ```
 
 
-## Distributios
+## Distributions
 Lets see what the distributions of horsepower stratified by number of cylinders looks like.
 ```{r, warning=FALSE, fig.align='center' }
 mtcars %>%
@@ -85,7 +142,7 @@ mtcars %>%
 ```
 
 ## Maybe try an interactive plot?
-```{r, warning=FALSE, fig.align='center', message=FALSE}
+```{r, warning=FALSE, fig.align='center', message=FALSE, fig.cap="This graphs shows the relationship between the number of miles per gallon and horsepower in the `mtcars` dataset."}
 library(plotly)
 p <- mtcars %>%
   rownames_to_column() %>%
@@ -96,10 +153,6 @@ p <- mtcars %>%
 
 ggplotly(p)
 ```
-
-
-This graphs shows the relationship between the number of miles per gallon and horsepower in the `mtcars` dataset.
-
 
 
 # Last paragraph

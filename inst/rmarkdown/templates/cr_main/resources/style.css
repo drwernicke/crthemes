@@ -21,7 +21,6 @@ body {
   color: #000000;
 }
 
-
 hr {
   color:  #383838;
   margin-top: 1rem;
@@ -30,6 +29,13 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+/* ---------- Color of active menu item in toc (hover)------- */
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+        z-index: 2;
+        color: #383838;
+        background-color: #ffffff;
+        border-color:#383838
+    }
 
 /* ---------- Links ----------------- */
 a {
