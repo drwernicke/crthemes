@@ -22,11 +22,9 @@ library(devtools)
 install_github("drwernicke/crthemes")
 library(crthemes)
 ```
-- Open a new rmd file in Rstudio: File -> New File -> R Markdown -> From Template -> epuRate.
+- Open a new rmd file in Rstudio: File -> New File -> R Markdown -> From Template -> crthemes.
 
 - Change  the Header of your document with your name, email adress, github / twitter / linkedIn details if you want to display them. You can also add a logo over the table of content.
-
-
 
 
 <br><br><br>
